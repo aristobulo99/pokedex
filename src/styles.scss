@@ -4,7 +4,11 @@ body{
 
 //background
 .bg-900{
-    background-color: #4e3e65;
+    background: #4e3e65;
+}
+
+.bg-purple-950{
+    background: #322447;
 }
 
 .bg-red-400-purple-900{
@@ -104,6 +108,10 @@ body{
     width: 4.938rem;
 }
 
+.w-135{
+    width: 8.438rem;
+}
+
 .w-223{
     width: 13.938rem;
 }
@@ -118,6 +126,10 @@ body{
 
 .w-980{
     width: 61.25rem;
+}
+
+.h-30{
+    height: 1.875rem !important;
 }
 
 .h-79{
@@ -187,6 +199,10 @@ body{
 
 // border
 
+.rounder-5{
+    border-radius: 0.313rem !important;
+}
+
 .rounder-15{
     border-radius: 0.938rem !important;
 }
@@ -196,6 +212,10 @@ body{
 }
 
 // gap
+
+.g-10{
+    gap: 0.625rem;
+}
 
 .g-20{
     gap: 1.25rem;
@@ -213,4 +233,40 @@ body{
 .m-y-20{
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
+}
+
+// padding
+.p-x-20{
+    box-sizing: border-box;
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+}
+
+// font
+.crimson-text-regular {
+    font-family: "Crimson Text", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  
+  .crimson-text-semibold {
+    font-family: "Crimson Text", serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+  
+  .crimson-text-bold {
+    font-family: "Crimson Text", serif;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+// text
+
+.text-white{
+    color: white;
+}
+
+.text-12{
+    font-size: 0.75rem;
 }
