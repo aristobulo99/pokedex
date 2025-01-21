@@ -1,4 +1,90 @@
+body{
+    margin: 0 !important;
+}
+
 //background
 .bg-900{
     background-color: #4e3e65;
+}
+
+.bg-red-400-purple-900{
+    background: linear-gradient(to bottom, #FF5757, #4e3e65);
+}
+
+// width and height
+.w-full{
+    width: 100%;
+}
+
+.h-full{
+    height: 100%;
+}
+
+.w-79{
+    width: 4.938rem;
+}
+
+.w-223{
+    width: 13.938rem;
+}
+
+.w-290{
+    width: 18.125rem;
+}
+
+.h-79{
+    height: 4.938rem;
+}
+
+.h-152{
+    height: 9.5rem;
+}
+
+//diplay
+
+.flex{
+    display: flex;
+}
+
+.flex-row{
+    flex-direction: row;
+}
+
+.flex-col{
+    flex-direction: column;
+}
+
+.justify-center{
+    justify-content: center;
+}
+
+.item-center{
+    align-items: center;
+}
+
+// position 
+
+.relative{
+    position: relative;
+}
+
+.absolute{
+    position: absolute;
+}
+
+
+// index 
+
+.z-1000{
+    z-index: 1000;
+}
+
+// left ringhy top bottom
+
+.l-53-3{
+    left: 53.3%;
+}
+
+.t-2{
+    top: 2%;
 }
