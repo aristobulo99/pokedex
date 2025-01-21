@@ -11,6 +11,86 @@ body{
     background: linear-gradient(to bottom, #FF5757, #4e3e65);
 }
 
+.bg-gradient-normal{
+    background: linear-gradient(to bottom, #ab88e430 20%, #A8A77A 140%);
+}
+
+.bg-gradient-fighting{
+    background: linear-gradient(to bottom, #ab88e430 20%, #C22E28 140%);
+}
+
+.bg-gradient-flying{
+    background: linear-gradient(to bottom, #ab88e430 20%, #A98FF3 140%);
+}
+
+.bg-gradient-poison {
+    background: linear-gradient(to bottom, #ab88e430 20%, #A33EA1 140%); 
+}
+
+.bg-gradient-ground {
+    background: linear-gradient(to bottom, #ab88e430 20%, #E2BF65 140%); 
+}
+
+.bg-gradient-rock {
+    background: linear-gradient(to bottom, #ab88e430 20%, #B6A136 140%); 
+}
+
+.bg-gradient-bug {
+    background: linear-gradient(to bottom, #ab88e430 20%, #A6B91A 140%); 
+}
+
+.bg-gradient-ghost {
+    background: linear-gradient(to bottom, #ab88e430 20%, #735797 140%); 
+}
+
+.bg-gradient-steel {
+    background: linear-gradient(to bottom, #ab88e430 20%, #B7B7CE 140%); 
+}
+
+.bg-gradient-fire {
+    background: linear-gradient(to bottom, #ab88e430 20%, #FF5757 140%); 
+}
+
+.bg-gradient-water {
+    background: linear-gradient(to bottom, #ab88e430 20%, #6390F0 140%); 
+}
+
+.bg-gradient-grass {
+    background: linear-gradient(to bottom, #ab88e430 20%, #7AC74C 140%); 
+}
+
+.bg-gradient-electric {
+    background: linear-gradient(to bottom, #ab88e430 20%, #FFCC00 140%); 
+}
+
+.bg-gradient-psychic {
+    background: linear-gradient(to bottom, #ab88e430 20%, #F95587 140%); 
+}
+
+.bg-gradient-ice {
+    background: linear-gradient(to bottom, #ab88e430 20%, #96D9D6 140%); 
+}
+
+.bg-gradient-dragon {
+    background: linear-gradient(to bottom, #ab88e430 20%, #6F35FC 140%); 
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(to bottom, #ab88e430 20%, #705898 140%);
+}
+
+.bg-gradient-fairy {
+    background: linear-gradient(to bottom, #ab88e430 20%, #D685AD 140%);
+}
+
+.bg-gradient-stellar {
+    background: linear-gradient(to bottom, #ab88e430 20%, #FFD700 140%);
+}
+
+.bg-gradient-unknown {
+    background: linear-gradient(to bottom, #ab88e430 20%, #000000 140%);
+}
+
 // width and height
 .w-full{
     width: 100%;
@@ -28,8 +108,16 @@ body{
     width: 13.938rem;
 }
 
+.w-230{
+    width: 14.375rem;
+}
+
 .w-290{
     width: 18.125rem;
+}
+
+.w-980{
+    width: 61.25rem;
 }
 
 .h-79{
@@ -40,7 +128,15 @@ body{
     height: 9.5rem;
 }
 
+.h-319{
+    height: 19.938rem;
+}
+
 //diplay
+
+.grip{
+    display: grid;
+}
 
 .flex{
     display: flex;
@@ -87,4 +183,34 @@ body{
 
 .t-2{
     top: 2%;
+}
+
+// border
+
+.rounder-15{
+    border-radius: 0.938rem !important;
+}
+
+.border-none{
+    border-width: 0 !important;
+}
+
+// gap
+
+.g-20{
+    gap: 1.25rem;
+}
+
+
+// Grid Template Columns
+
+.grid-cols-4{
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+// margin
+
+.m-y-20{
+    margin-top: 1.25rem;
+    margin-bottom: 1.25rem;
 }

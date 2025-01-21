@@ -1,0 +1,24 @@
+<mat-card class="w-full h-full rounder-15 border-none" appearance="outlined" [ngClass]="{
+    'bg-gradient-normal': pokemonTypeName == 'normal',
+    'bg-gradient-fighting': pokemonTypeName == 'fighting',
+    'bg-gradient-flying': pokemonTypeName == 'flying',
+    'bg-gradient-poison': pokemonTypeName == 'poison',
+    'bg-gradient-ground': pokemonTypeName == 'ground',
+    'bg-gradient-rock': pokemonTypeName == 'rock',
+    'bg-gradient-bug': pokemonTypeName == 'bug',
+    'bg-gradient-ghost': pokemonTypeName == 'ghost',
+    'bg-gradient-steel': pokemonTypeName == 'steel',
+    'bg-gradient-fire': pokemonTypeName == 'fire',
+    'bg-gradient-water': pokemonTypeName == 'water',
+    'bg-gradient-grass': pokemonTypeName == 'grass',
+    'bg-gradient-electric': pokemonTypeName == 'electric',
+    'bg-gradient-psychic': pokemonTypeName == 'psychic',
+    'bg-gradient-ice': pokemonTypeName == 'ice',
+    'bg-gradient-dragon': pokemonTypeName == 'dragon',
+    'bg-gradient-dark': pokemonTypeName == 'dark',
+    'bg-gradient-fairy': pokemonTypeName == 'fairy',
+    'bg-gradient-stellar': pokemonTypeName == 'stellar',
+    'bg-gradient-unknown': pokemonTypeName == 'unknown'
+}">
+    <mat-card-content>{{pokemonTypeName}}</mat-card-content>
+</mat-card>
