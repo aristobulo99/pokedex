@@ -8,7 +8,7 @@ body{
 }
 
 .bg-purple-950{
-    background: #322447;
+    background: #322447 !important;
 }
 
 .bg-red-400-purple-900{
@@ -104,8 +104,16 @@ body{
     height: 100%;
 }
 
+.w-72{
+    width: 4.5rem;
+}
+
 .w-79{
     width: 4.938rem;
+}
+
+.w-128{
+    width: 8rem;
 }
 
 .w-135{
@@ -128,12 +136,20 @@ body{
     width: 61.25rem;
 }
 
+.h-16{
+    height: 1rem;
+}
+
 .h-30{
     height: 1.875rem !important;
 }
 
 .h-79{
     height: 4.938rem;
+}
+
+.h-128{
+    height: 8rem;
 }
 
 .h-152{
@@ -212,9 +228,16 @@ body{
 }
 
 // gap
+.g-4{
+    gap: 0.25rem;
+}
 
 .g-10{
     gap: 0.625rem;
+}
+
+.g-12{
+    gap: 0.75rem;
 }
 
 .g-20{
@@ -247,19 +270,22 @@ body{
     font-family: "Crimson Text", serif;
     font-weight: 400;
     font-style: normal;
-  }
+    margin: 0 !important;
+}
   
-  .crimson-text-semibold {
+.crimson-text-semibold {
     font-family: "Crimson Text", serif;
     font-weight: 600;
     font-style: normal;
-  }
+    margin: 0 !important;
+}
   
-  .crimson-text-bold {
+.crimson-text-bold {
     font-family: "Crimson Text", serif;
     font-weight: 700;
     font-style: normal;
-  }
+    margin: 0 !important;
+}
 
 // text
 
@@ -269,4 +295,16 @@ body{
 
 .text-12{
     font-size: 0.75rem;
+}
+
+.text-14{
+    font-size: 0.875rem;
+}
+
+.text-16{
+    font-size: 1rem;
+}
+
+.text-20{
+    font-size: 1.25rem;
 }

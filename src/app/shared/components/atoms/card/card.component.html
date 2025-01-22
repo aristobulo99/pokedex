@@ -20,5 +20,7 @@
     'bg-gradient-stellar': pokemonTypeName == 'stellar',
     'bg-gradient-unknown': pokemonTypeName == 'unknown'
 }">
-    <mat-card-content>{{pokemonTypeName}}</mat-card-content>
+    <mat-card-content>
+        <ng-container *ngTemplateOutlet="content"></ng-container>
+    </mat-card-content>
 </mat-card>

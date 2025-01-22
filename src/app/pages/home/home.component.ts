@@ -3,12 +3,13 @@ import { CardComponent } from '../../shared/components/atoms/card/card.component
 import { PokemonTypeName } from '../../core/interfaces/pokemonTypeName.interface';
 import { PokemonService } from '../../core/services/pokemon/pokemon.service';
 import { Pokemon, ResultPokemon } from '../../core/interfaces/pokemon.interface';
+import { PokemonCardComponent } from '../../shared/components/molecules/pokemon-card/pokemon-card.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
-    CardComponent
+    PokemonCardComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -38,6 +39,8 @@ export class HomeComponent implements OnInit {
      'unknown'
   ];
 
+  public dataPokemon: Pokemon[] = [];
+
   constructor(
     private pokemonService:PokemonService
   ){}
@@ -50,8 +53,8 @@ export class HomeComponent implements OnInit {
     try{
       const result: ResultPokemon = await this.pokemonService.getAllPokemon();
       const pokemon:Pokemon[] = await this.pokemonService.getAllDetailedPokemons(result);
-      await this.pokemonService.getIconTypePokemon(pokemon)
-      console.log(pokemon)
+      await this.pokemonService.getIconTypePokemon(pokemon);
+      this.dataPokemon = pokemon;
     }catch(e){
       console.log(e)
     }

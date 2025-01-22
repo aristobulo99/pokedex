@@ -1,3 +1,4 @@
+import { PokemonTypeName } from "./pokemonTypeName.interface";
 
 export interface NameIcon{
     name_icon: string;
@@ -14,7 +15,10 @@ export interface ResultPokemon {
 
 export interface SlotType {
     slot: number;
-    type: NameUrl;
+    type: {
+        name: PokemonTypeName;
+        url: string;
+    }
     url: string;
 }
 

@@ -1,7 +1,7 @@
 <section class="w-full h-full flex justify-center">
     <div class="w-980 h-full grip grid-cols-4 g-20 m-y-20">
-        @for (item of testList; track $index) {
-            <app-card class="w-230 h-319" [pokemonTypeName]="item"></app-card>
+        @for (pokemon of dataPokemon; track $index) {
+            <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
         }
     </div>
 
