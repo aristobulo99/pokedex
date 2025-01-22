@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { environment } from '../../../../environments/environments';
-import { Pokemon, PokemonDetail, PokemonSpecies, ResultPokemon } from '../../interfaces/pokemon.interface';
+import { Chain, EvolutionChain, Pokemon, PokemonDetail, PokemonSpecies, ResultPokemon } from '../../interfaces/pokemon.interface';
 import { PokemonTypeName } from '../../interfaces/pokemonTypeName.interface';
 import { Datasets } from '../../interfaces/radarSkipPoints.interface';
 
@@ -44,7 +44,7 @@ export class PokemonService {
 
   async getAllPokemon(): Promise<ResultPokemon>{
     return lastValueFrom(
-      this.http.get<ResultPokemon>(`${environment.apiUrl}/pokemon?offset=30&limit=30`)
+      this.http.get<ResultPokemon>(`${environment.apiUrl}/pokemon?offset=0&limit=30`)
     )
   }
 
@@ -91,5 +91,24 @@ export class PokemonService {
     const pokemonSpecies: PokemonSpecies = await lastValueFrom(this.http.get<PokemonSpecies>(url));
     pokemonSpecies.flavor_text_entries = pokemonSpecies.flavor_text_entries.filter((ft) => ft.language.name === 'es');
     return pokemonSpecies;
+  }
+
+  async generateEvolutionList(chain: Chain): Promise<Pokemon[]> {
+    const pokemons: Pokemon[] = [];
+    let currentChain: Chain | null = chain;
+  
+    while (currentChain) {
+      const pokemon = await this.getPokemonByUrl(`${environment.apiUrl}/pokemon/${currentChain.species.name}`);
+      pokemons.push(pokemon);
+  
+      currentChain = currentChain.evolves_to.length > 0 ? currentChain.evolves_to[0] : null;
+    }
+  
+    return pokemons;
+  }
+
+  async getEvolutionChain(url: string){
+    const chain = await lastValueFrom(this.http.get<EvolutionChain>(url));
+    return await this.generateEvolutionList(chain.chain);
   }
 }

@@ -72,9 +72,9 @@ export class PokemonDetailComponent implements OnInit, AfterViewInit{
     try{
       const pokemon: PokemonDetail = await this.pokemonService.getPokemonByUrl(url) as PokemonDetail;
       const pokemonSpecies = await this.pokemonService.getPokemonSpecies(pokemon.species.url);
+      const evolution: Pokemon[] = await this.pokemonService.getEvolutionChain(pokemonSpecies.evolution_chain.url);
       await this.pokemonService.getTypePokemon(pokemon);
-
-      this.dataPokemon = {...pokemon, pokemonSpecies};
+      this.dataPokemon = {...pokemon, pokemonSpecies, evolution};
       this.getDataLabesChart();
     }catch(e){
       console.log(e);

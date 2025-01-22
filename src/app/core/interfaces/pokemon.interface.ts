@@ -29,9 +29,13 @@ export interface SpritesGeneration {
 
 export interface OtherSprintes {
     showdown: SpritesGeneration;
+    dream_world: {
+        front_default: string
+    }
 }
 
 export interface Sprites {
+    front_default: string;
     "generation-viii": SpritesGeneration;
     other: OtherSprintes
 }
@@ -65,10 +69,20 @@ export interface Pokemon {
 export interface PokemonDetail extends Pokemon{
     species: NameUrl;
     pokemonSpecies?: PokemonSpecies;
-    abilities: Abilities[]
+    abilities: Abilities[];
+    evolution: Pokemon[];
 }
 
 export interface PokemonSpecies{
     evolution_chain: NameUrl;
     flavor_text_entries: flavorTextEntries[]
+}
+
+export interface Chain {
+    species: NameUrl;
+    evolves_to: Chain[]
+}
+
+export interface EvolutionChain {
+    chain: Chain
 }

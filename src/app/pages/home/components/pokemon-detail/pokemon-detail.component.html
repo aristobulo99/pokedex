@@ -1,7 +1,7 @@
 <ng-template #pokemonDetail>
     <section class="w-full h-687 grip grid-cols-2 p-16">
         <section class="w-full h-full flex flex-col item-center g-16">
-            <img class="w-250 h-250" [src]="dataPokemon.sprites.other.showdown.front_default" alt="git pokemon">
+            <img class="w-250 h-250" [src]="dataPokemon.sprites.other.dream_world.front_default" alt="git pokemon">
     
             <h1 class="crimson-text-bold text-white text-24">{{dataPokemon.name | capitalize }}</h1>
     
@@ -53,9 +53,24 @@
             </div>
     
         </section>
-        <section class="w-full h-full flex flex-col item-center g-16">
+        <section class="w-full h-full flex flex-col item-center justify-center g-20">
             <div class="w-full flex flex-col justify-center item-center">
                 <app-radar-skip-points class="w-full h-319" [labels]="labels" [data]="data" [datasets]="dataSets"></app-radar-skip-points>
+            </div>
+
+            <div class="w-full flex flex-col justify-center item-center g-16">
+                <h2 class="crimson-text-bold text-white text-20 text-aling-center">Evolución</h2>
+                <div class="w-full flex flex-row justify-center item-center g-4">
+                    @for (pokem of dataPokemon.evolution; track $index) {
+                        <div class="flex flex-col justify-center">
+                            <img class="w-h-128" [src]="pokem.sprites.other.dream_world.front_default" alt="png pokemon">
+                            <p class="crimson-text-regular text-white text-20 text-aling-center" >{{pokem.name}}</p>
+                        </div>
+                        @if (($index + 1) != dataPokemon.evolution.length  ) {
+                            <app-icon class="w-30 h-30" [name]="'double-arrow'"></app-icon>
+                        }
+                    }
+                </div>
             </div>
         </section>
     </section>

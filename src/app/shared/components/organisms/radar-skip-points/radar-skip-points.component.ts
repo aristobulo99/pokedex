@@ -40,7 +40,7 @@ export class RadarSkipPointsComponent implements AfterViewInit{
             r: {
               pointLabels: {
                 font: {
-                  size: 9,
+                  size: 12,
                   weight: 'bold',
                 },
                 color: 'white', 
