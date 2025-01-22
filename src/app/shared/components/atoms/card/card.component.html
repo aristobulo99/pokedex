@@ -18,9 +18,10 @@
     'bg-gradient-dark': pokemonTypeName == 'dark',
     'bg-gradient-fairy': pokemonTypeName == 'fairy',
     'bg-gradient-stellar': pokemonTypeName == 'stellar',
-    'bg-gradient-unknown': pokemonTypeName == 'unknown'
+    'bg-gradient-unknown': pokemonTypeName == 'unknown',
+    'bg-gradient-loading': pokemonTypeName == 'loading'
 }">
-    <mat-card-content>
+    <mat-card-content class="h-full">
         <ng-container *ngTemplateOutlet="content"></ng-container>
     </mat-card-content>
 </mat-card>

@@ -16,7 +16,7 @@ import { NgClass, NgTemplateOutlet } from '@angular/common';
 })
 export class CardComponent {
 
-  @Input() pokemonTypeName: PokemonTypeName = 'normal';
+  @Input() pokemonTypeName: PokemonTypeName | 'loading' = 'normal';
   @Input() content!: TemplateRef<any>;
 
 }

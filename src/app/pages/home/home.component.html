@@ -1,7 +1,13 @@
 <section class="w-full h-full flex justify-center">
     <div class="w-980 h-full grip grid-cols-4 g-20 m-y-20">
-        @for (pokemon of dataPokemon; track $index) {
-            <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+        @if (loadingCard) {
+            @for (item of [].constructor(8); track $index) {
+                <app-loading-card></app-loading-card>
+            }
+        }@else {
+            @for (pokemon of dataPokemon; track $index) {
+                <app-pokemon-card [pokemon]="pokemon"></app-pokemon-card>
+            }
         }
     </div>
 
