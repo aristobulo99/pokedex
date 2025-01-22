@@ -46,4 +46,15 @@ export class PokemonService {
       }
     }
   }
+
+  async getTypePokemon(pokemon: Pokemon){
+    for (const type of pokemon.types) {
+      try {
+        const dataType = await this.getPokemonByUrl(type.type.url);
+        type.url = dataType.sprites['generation-viii']['brilliant-diamond-and-shining-pearl'].name_icon;
+      } catch (error) {
+        console.error(`Error fetching data for type URL ${type.type.url}: ${error}`);
+      }
+    }
+  }
 }

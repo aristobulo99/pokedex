@@ -3,7 +3,7 @@
           [content]="porkemonCard"></app-card>
 
 <ng-template #porkemonCard>
-    <section class="w-full h-full flex flex-col item-center g-12">
+    <section class="w-full h-full flex flex-col item-center g-12 p-16">
         <img class="w-128 h-128" [src]="pokemon.sprites.other.showdown.front_default" alt="git pokemon">
 
         <h1 class="crimson-text-bold text-white text-20">{{pokemon.name | capitalize }}</h1>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <app-button-icon [icon]="'flash'" [title]="'Más Detalles'" (eventClick)="openDialog()"></app-button-icon>
+        <app-button-icon [icon]="'flash'" [title]="'Más Detalles'" (eventClick)="openDialog(pokemon.id)"></app-button-icon>
 
     </section>
 </ng-template>

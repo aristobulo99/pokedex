@@ -8,6 +8,11 @@
 // Be sure that you only ever include this mixin once!
 @include mat.core();
 
+.mat-mdc-dialog-container .mdc-dialog__surface{
+    background: #B9AAD6 !important;
+    border-radius: 1.25rem !important;
+}
+
 
 body{
     margin: 0 !important;
@@ -175,6 +180,10 @@ body{
     height: 19.938rem;
 }
 
+.h-687{
+    height: 42.938rem;
+}
+
 //diplay
 
 .grip{
@@ -274,6 +283,14 @@ body{
 }
 
 // padding
+.p-0{
+    padding: 0 !important;
+}
+
+.p-16{
+    padding: 1rem;
+    box-sizing: border-box;
+}
 .p-x-20{
     box-sizing: border-box;
     padding-left: 1.25rem !important;

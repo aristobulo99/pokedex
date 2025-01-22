@@ -3,13 +3,15 @@ import { PokemonService } from '../../core/services/pokemon/pokemon.service';
 import { Pokemon, ResultPokemon } from '../../core/interfaces/pokemon.interface';
 import { PokemonCardComponent } from '../../shared/components/molecules/pokemon-card/pokemon-card.component';
 import { LoadingCardComponent } from '../../shared/components/molecules/loading-card/loading-card.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
   imports: [
     PokemonCardComponent,
-    LoadingCardComponent
+    LoadingCardComponent,
+    RouterOutlet
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

@@ -1,0 +1,36 @@
+<ng-template #pokemonDetail>
+    <section class="w-full h-687 felx p-16" >
+        <section class="w-full h-full flex flex-col item-center g-12 p-16">
+            <img class="w-128 h-128" [src]="dataPokemon.sprites.other.showdown.front_default" alt="git pokemon">
+    
+            <h1 class="crimson-text-bold text-white text-20">{{dataPokemon.name | capitalize }}</h1>
+    
+            <div class="w-full flex flew-row justify-center g-10">
+                @for (type of dataPokemon.types; track $index) {
+                    <img class="w-72 h-16" [src]="type.url" alt="Tipo de pokemon">
+                }
+            </div>
+    
+            <div class="w-full flex flew-row justify-center item-center g-20">
+                <div class="flex flex-col item-center g-4">
+                    <p class="crimson-text-bold text-white text-16" >{{dataPokemon.height | decimetersToMeters}} M</p>
+    
+                    <div class="flex flex-row item-center">
+                        <app-icon [name]="'height'"></app-icon>
+                        <p class="crimson-text-regular text-white text-14" >Altura</p>
+                    </div>
+                </div>
+    
+                <div class="flex flex-col g-4">
+                    <p class="crimson-text-bold text-white text-16" >{{dataPokemon.weight | hectogramsToKilograms}} Kg</p>
+    
+                    <div class="flex flex-row item-center">
+                        <app-icon [name]="'weight'"></app-icon>
+                        <p class="crimson-text-regular text-white text-14" >Peso</p>
+                    </div>
+                </div>
+            </div>
+    
+        </section>
+    </section>
+</ng-template>

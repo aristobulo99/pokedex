@@ -6,7 +6,7 @@ import { ButtonIconComponent } from '../../atoms/button-icon/button-icon.compone
 import { CapitalizePipe } from '../../../pipe/capitalize/capitalize.pipe';
 import { DecimetersToMetersPipe } from '../../../pipe/decimetersToMeters/decimeters-to-meters.pipe';
 import { HectogramsToKilogramsPipe } from '../../../pipe/hectogramsToKilograms/hectograms-to-kilograms.pipe';
-import { LoadingService } from '../../../../core/services/loading/loading.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -27,16 +27,11 @@ export class PokemonCardComponent {
   @Input() pokemon!:Pokemon;
 
   constructor(
-    private loadingService: LoadingService
+    private router: Router,
   ){}
   
-  openDialog(){
-    this.loadingService.show();
-
-    setTimeout(() => {
-    
-      this.loadingService.hide();
-    }, 5000);
+  openDialog(id: number){
+    this.router.navigate(['/home-pokedex', { outlets: { dialog: ['pokemon', id] } }]);
   }
 
 }
