@@ -6,6 +6,7 @@ import { ButtonIconComponent } from '../../atoms/button-icon/button-icon.compone
 import { CapitalizePipe } from '../../../pipe/capitalize/capitalize.pipe';
 import { DecimetersToMetersPipe } from '../../../pipe/decimetersToMeters/decimeters-to-meters.pipe';
 import { HectogramsToKilogramsPipe } from '../../../pipe/hectogramsToKilograms/hectograms-to-kilograms.pipe';
+import { LoadingService } from '../../../../core/services/loading/loading.service';
 
 @Component({
   selector: 'app-pokemon-card',
@@ -24,6 +25,18 @@ import { HectogramsToKilogramsPipe } from '../../../pipe/hectogramsToKilograms/h
 export class PokemonCardComponent {
 
   @Input() pokemon!:Pokemon;
+
+  constructor(
+    private loadingService: LoadingService
+  ){}
   
+  openDialog(){
+    this.loadingService.show();
+
+    setTimeout(() => {
+    
+      this.loadingService.hide();
+    }, 5000);
+  }
 
 }
