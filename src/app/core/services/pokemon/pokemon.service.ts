@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { lastValueFrom } from 'rxjs';
 import { environment } from '../../../../environments/environments';
-import { Pokemon, ResultPokemon } from '../../interfaces/pokemon.interface';
+import { Pokemon, PokemonDetail, PokemonSpecies, ResultPokemon } from '../../interfaces/pokemon.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -19,9 +19,9 @@ export class PokemonService {
     )
   }
 
-  async getPokemonByUrl(url: string): Promise<Pokemon>{
+  async getPokemonByUrl(url: string): Promise<Pokemon | PokemonDetail>{
     return lastValueFrom(
-      this.http.get<Pokemon>(url)
+      this.http.get<Pokemon | PokemonDetail>(url)
     )
   }
 
@@ -47,7 +47,7 @@ export class PokemonService {
     }
   }
 
-  async getTypePokemon(pokemon: Pokemon){
+  async getTypePokemon(pokemon: PokemonDetail){
     for (const type of pokemon.types) {
       try {
         const dataType = await this.getPokemonByUrl(type.type.url);
@@ -56,5 +56,11 @@ export class PokemonService {
         console.error(`Error fetching data for type URL ${type.type.url}: ${error}`);
       }
     }
+  }
+
+  async getPokemonSpecies(url: string): Promise<PokemonSpecies>{
+    const pokemonSpecies: PokemonSpecies = await lastValueFrom(this.http.get<PokemonSpecies>(url));
+    pokemonSpecies.flavor_text_entries = pokemonSpecies.flavor_text_entries.filter((ft) => ft.language.name === 'es');
+    return pokemonSpecies;
   }
 }

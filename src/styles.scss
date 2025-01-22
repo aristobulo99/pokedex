@@ -20,7 +20,7 @@ body{
 
 //background
 .bg-900{
-    background: #4e3e65;
+    background: #4e3e65 !important;
 }
 
 .bg-purple-950{
@@ -124,6 +124,10 @@ body{
     height: 100%;
 }
 
+.w-24{
+    width: 1.5rem;
+}
+
 .w-72{
     width: 4.5rem;
 }
@@ -140,12 +144,20 @@ body{
     width: 8.438rem;
 }
 
+.w-148{
+    width: 9.25rem;
+}
+
 .w-223{
     width: 13.938rem;
 }
 
 .w-230{
     width: 14.375rem;
+}
+
+.w-250{
+    width: 15.625rem;
 }
 
 .w-290{
@@ -160,8 +172,16 @@ body{
     height: 1rem;
 }
 
+.h-24{
+    height: 1.5rem;
+}
+
 .h-30{
     height: 1.875rem !important;
+}
+
+.h-33{
+    height: 2.063rem !important;
 }
 
 .h-79{
@@ -174,6 +194,10 @@ body{
 
 .h-152{
     height: 9.5rem;
+}
+
+.h-250{
+    height: 15.625rem;
 }
 
 .h-319{
@@ -264,12 +288,20 @@ body{
     gap: 0.75rem;
 }
 
+.g-16{
+    gap: 1rem;
+}
+
 .g-20{
     gap: 1.25rem;
 }
 
 
 // Grid Template Columns
+
+.grid-cols-2{
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
 .grid-cols-4{
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -339,6 +371,14 @@ body{
 
 .text-20{
     font-size: 1.25rem;
+}
+
+.text-24{
+    font-size: 1.5rem;
+}
+
+.text-aling-center{
+    text-align: center;
 }
 
 // Aplica la animación a la imagen

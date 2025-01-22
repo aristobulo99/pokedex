@@ -3,12 +3,13 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DialogService } from '../../../../core/services/dialog/dialog.service';
 import { PokemonService } from '../../../../core/services/pokemon/pokemon.service';
 import { environment } from '../../../../../environments/environments';
-import { Pokemon } from '../../../../core/interfaces/pokemon.interface';
+import { Pokemon, PokemonDetail } from '../../../../core/interfaces/pokemon.interface';
 import { LoadingService } from '../../../../core/services/loading/loading.service';
 import { IconComponent } from '../../../../shared/components/atoms/icon/icon.component';
 import { CapitalizePipe } from '../../../../shared/pipe/capitalize/capitalize.pipe';
 import { DecimetersToMetersPipe } from '../../../../shared/pipe/decimetersToMeters/decimeters-to-meters.pipe';
 import { HectogramsToKilogramsPipe } from '../../../../shared/pipe/hectogramsToKilograms/hectograms-to-kilograms.pipe';
+import { ChipsComponent } from '../../../../shared/components/atoms/chips/chips.component';
 
 @Component({
   selector: 'app-pokemon-detail',
@@ -17,7 +18,8 @@ import { HectogramsToKilogramsPipe } from '../../../../shared/pipe/hectogramsToK
     IconComponent,
     CapitalizePipe,
     DecimetersToMetersPipe,
-    HectogramsToKilogramsPipe
+    HectogramsToKilogramsPipe,
+    ChipsComponent
   ],
   templateUrl: './pokemon-detail.component.html',
   styleUrl: './pokemon-detail.component.scss'
@@ -25,7 +27,7 @@ import { HectogramsToKilogramsPipe } from '../../../../shared/pipe/hectogramsToK
 export class PokemonDetailComponent implements OnInit, AfterViewInit{
 
   @ViewChild('pokemonDetail') pokemonDetail!: TemplateRef<any>;
-  public dataPokemon!:Pokemon;
+  public dataPokemon!:PokemonDetail;
 
   constructor(
     private route: ActivatedRoute,
@@ -62,9 +64,12 @@ export class PokemonDetailComponent implements OnInit, AfterViewInit{
   async initializePokemonData(id: string){
     const url: string = `${environment.apiUrl}/pokemon/${id}`;
     try{
-      const pokemon: Pokemon = await this.pokemonService.getPokemonByUrl(url);
+      const pokemon: PokemonDetail = await this.pokemonService.getPokemonByUrl(url) as PokemonDetail;
+      const pokemonSpecies = await this.pokemonService.getPokemonSpecies(pokemon.species.url);
       await this.pokemonService.getTypePokemon(pokemon);
-      this.dataPokemon = pokemon;
+
+      this.dataPokemon = {...pokemon, pokemonSpecies};
+      console.log(this.dataPokemon.pokemonSpecies?.flavor_text_entries)
     }catch(e){
       console.log(e);
     }finally{

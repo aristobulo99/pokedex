@@ -1,33 +1,54 @@
 <ng-template #pokemonDetail>
-    <section class="w-full h-687 felx p-16" >
-        <section class="w-full h-full flex flex-col item-center g-12 p-16">
-            <img class="w-128 h-128" [src]="dataPokemon.sprites.other.showdown.front_default" alt="git pokemon">
+    <section class="w-full h-687 grip grid-cols-2 ">
+        <section class="w-full h-full flex flex-col item-center g-16 p-16">
+            <img class="w-250 h-250" [src]="dataPokemon.sprites.other.showdown.front_default" alt="git pokemon">
     
-            <h1 class="crimson-text-bold text-white text-20">{{dataPokemon.name | capitalize }}</h1>
+            <h1 class="crimson-text-bold text-white text-24">{{dataPokemon.name | capitalize }}</h1>
     
-            <div class="w-full flex flew-row justify-center g-10">
+            <div class="w-full flex flex-row justify-center g-10">
                 @for (type of dataPokemon.types; track $index) {
-                    <img class="w-72 h-16" [src]="type.url" alt="Tipo de pokemon">
+                    <img class="w-148 h-33" [src]="type.url" alt="Tipo de pokemon">
                 }
+            </div>
+
+            <div class="w-full flex flex-col justify-center item-center">
+                <h2 class="crimson-text-bold text-white text-20 text-aling-center">Información en la Pokedex</h2>
+                @if (dataPokemon.pokemonSpecies) {
+                    <p class="crimson-text-regular text-white text-20 text-aling-center" >{{dataPokemon.pokemonSpecies.flavor_text_entries[0].flavor_text}}</p>
+                }
+            </div>
+
+            <div class="w-full flex flex-col justify-center item-center">
+                <h2 class="crimson-text-bold text-white text-20 text-aling-center">Habilidades</h2>
+                <div class="w-full flex flex-row justify-center g-10">
+                    @for (item of dataPokemon.abilities ; track $index) {
+                        <app-chips [iconn]="'check'" [title]="item.ability.name"></app-chips>
+                    }
+                </div>
+            </div>
+
+            <div class="w-full flex flex-col justify-center item-center">
+                <h2 class="crimson-text-bold text-white text-20 text-aling-center">Experiencia base</h2>
+                <p class="crimson-text-regular text-white text-20 text-aling-center" >{{dataPokemon.base_experience}} pt</p>
             </div>
     
             <div class="w-full flex flew-row justify-center item-center g-20">
                 <div class="flex flex-col item-center g-4">
-                    <p class="crimson-text-bold text-white text-16" >{{dataPokemon.height | decimetersToMeters}} M</p>
-    
                     <div class="flex flex-row item-center">
-                        <app-icon [name]="'height'"></app-icon>
-                        <p class="crimson-text-regular text-white text-14" >Altura</p>
+                        <app-icon class="w-24 h-24" [name]="'height'"></app-icon>
+                        <p class="crimson-text-bold text-white text-20" >Altura</p>
                     </div>
+
+                    <p class="crimson-text-regular text-white text-20" >{{dataPokemon.height | decimetersToMeters}} M</p>
                 </div>
     
                 <div class="flex flex-col g-4">
-                    <p class="crimson-text-bold text-white text-16" >{{dataPokemon.weight | hectogramsToKilograms}} Kg</p>
-    
                     <div class="flex flex-row item-center">
-                        <app-icon [name]="'weight'"></app-icon>
-                        <p class="crimson-text-regular text-white text-14" >Peso</p>
+                        <app-icon class="w-24 h-24" [name]="'weight'"></app-icon>
+                        <p class="crimson-text-bold text-white text-20" >Peso</p>
                     </div>
+
+                    <p class="crimson-text-regular text-white text-20" >{{dataPokemon.weight | hectogramsToKilograms}} Kg</p>
                 </div>
             </div>
     

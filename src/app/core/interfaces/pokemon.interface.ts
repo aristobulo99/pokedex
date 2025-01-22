@@ -42,6 +42,15 @@ export interface Stats {
     stat: NameUrl
 }
 
+export interface flavorTextEntries {
+    flavor_text: string;
+    language: NameUrl
+}
+
+export interface Abilities {
+    ability: NameUrl
+}
+
 export interface Pokemon {
     id: number;
     name: string;
@@ -50,5 +59,16 @@ export interface Pokemon {
     weight: number;
     types: SlotType[];
     sprites: Sprites;
-    stats: Stats
+    stats: Stats;
+}
+
+export interface PokemonDetail extends Pokemon{
+    species: NameUrl;
+    pokemonSpecies?: PokemonSpecies;
+    abilities: Abilities[]
+}
+
+export interface PokemonSpecies{
+    evolution_chain: NameUrl;
+    flavor_text_entries: flavorTextEntries[]
 }
