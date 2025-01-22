@@ -1,6 +1,6 @@
 <ng-template #pokemonDetail>
-    <section class="w-full h-687 grip grid-cols-2 ">
-        <section class="w-full h-full flex flex-col item-center g-16 p-16">
+    <section class="w-full h-687 grip grid-cols-2 p-16">
+        <section class="w-full h-full flex flex-col item-center g-16">
             <img class="w-250 h-250" [src]="dataPokemon.sprites.other.showdown.front_default" alt="git pokemon">
     
             <h1 class="crimson-text-bold text-white text-24">{{dataPokemon.name | capitalize }}</h1>
@@ -52,6 +52,11 @@
                 </div>
             </div>
     
+        </section>
+        <section class="w-full h-full flex flex-col item-center g-16">
+            <div class="w-full flex flex-col justify-center item-center">
+                <app-radar-skip-points class="w-full h-319" [labels]="labels" [data]="data" [datasets]="dataSets"></app-radar-skip-points>
+            </div>
         </section>
     </section>
 </ng-template>

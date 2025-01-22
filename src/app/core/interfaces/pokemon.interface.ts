@@ -59,7 +59,7 @@ export interface Pokemon {
     weight: number;
     types: SlotType[];
     sprites: Sprites;
-    stats: Stats;
+    stats: Stats[];
 }
 
 export interface PokemonDetail extends Pokemon{
