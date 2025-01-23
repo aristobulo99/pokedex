@@ -1,5 +1,5 @@
 <ng-template #pokemonDetail>
-    <section class="w-full h-687 grip grid-cols-2 p-16">
+    <section class="w-full h-687 grip grid-cols-2 p-16 scroll-element">
         <section class="w-full h-full flex flex-col item-center g-16">
             <img class="w-250 h-250" [src]="dataPokemon.sprites.other.dream_world.front_default" alt="git pokemon">
     
@@ -35,7 +35,7 @@
             <div class="w-full flex flew-row justify-center item-center g-20">
                 <div class="flex flex-col item-center g-4">
                     <div class="flex flex-row item-center">
-                        <app-icon class="w-24 h-24" [name]="'height'"></app-icon>
+                        <app-icon [name]="'height'"></app-icon>
                         <p class="crimson-text-bold text-white text-20" >Altura</p>
                     </div>
 
@@ -44,7 +44,7 @@
     
                 <div class="flex flex-col g-4">
                     <div class="flex flex-row item-center">
-                        <app-icon class="w-24 h-24" [name]="'weight'"></app-icon>
+                        <app-icon [name]="'weight'"></app-icon>
                         <p class="crimson-text-bold text-white text-20" >Peso</p>
                     </div>
 

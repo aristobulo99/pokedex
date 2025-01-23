@@ -56,7 +56,7 @@ export class PokemonDetailComponent implements OnInit, AfterViewInit{
     if(this.route.snapshot.outlet === 'dialog' && idPokemon){
       await this.initializePokemonData(idPokemon);
       const dialogRef = this.dialogService.openDialog({
-          width: '69.313rem',
+          width: '70.8vw',
           pokemonTypeName: this.dataPokemon.types[0].type.name,
           templete: this.pokemonDetail
       });
